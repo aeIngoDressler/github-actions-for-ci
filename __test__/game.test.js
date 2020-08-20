@@ -5,7 +5,6 @@ describe('App', () => {
   it('Contains the compiled JavaScript', async (done) => {
     fs.readFile('./public/main.js', 'utf8', (err, data) => {
       expect(err).toBe(null)
-      expect(data).toMatchSnapshot()
       done()
     })
   })
@@ -38,7 +37,7 @@ describe('Game', () => {
       expect(new Game(p1, p2).player).toBe('Salem')
 
       Math.random = () => 0.6
-      expect(new Game(p1, p2).player).toBe('Nate')
+      expect(new Game(p1, p2).player).toBe('Bananas')
     })
   })
 
@@ -60,7 +59,7 @@ describe('Game', () => {
       const game = new Game(p1, p2)
       expect(game.player).toBe('Salem')
       game.nextPlayer()
-      expect(game.player).toBe('Nate')
+      expect(game.player).toBe('Bananas')
     })
   })
 
